@@ -17,7 +17,7 @@ app.post("/", async (request, response) => {
   try {
     await axios
       .get(
-        `!!!!!!https://serpapi.com/search.json?&tbm=isch&engine=google&q=${name}&api_key=${apiKey}`
+        `https://serpapi.com/search.json?&tbm=isch&engine=google&q=${name}&api_key=${apiKey}`
       )
       .then((res) => {
         const { data } = res;
@@ -38,7 +38,7 @@ app.post("/", async (request, response) => {
 
     const fallBackImageDueToSerpApiLimit = $("img.yWs4tf").attr();
 
-    const { src, alt } = fallBackImageDueToSerpApiLimit;
+    const { src } = fallBackImageDueToSerpApiLimit;
 
     return response.status(200).json({
       image: src,
