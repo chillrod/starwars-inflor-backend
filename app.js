@@ -31,7 +31,7 @@ app.post("/", async (request, response) => {
       });
   } catch (err) {
     const { data } = await axios.get(
-      `https://www.google.com/search?tbm=isch&as_q=${name}&tbs=isz:lt,islt:4mp`
+      `https://www.google.com/search?tbm=isch&as_q=${name}&tbs=isz:lt,islt:12mp`
     );
 
     const $ = cheerio.load(data);
